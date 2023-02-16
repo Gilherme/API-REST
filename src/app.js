@@ -50,4 +50,12 @@ app.post('/selecoes', (req, res)=>{
     res.status(201).send('seleção cadastrada com sucesso!')
 });
 
+// o metodo put é usado para fazer atualizações 
+app.put('/selecoes/:id', (req, res)=>{
+    let index = getIndexnSelecao(req.params.id)
+    selecoes[index].selecao  = req.body.selecao
+    selecoes[index].grupo    = req.body.grupo
+    res.json(selecoes) 
+})
+
 export default app;
