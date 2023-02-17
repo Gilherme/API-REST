@@ -8,4 +8,6 @@ const conexao = mysql.createConnection({
   database: 'dbapirest'
 })
 
+conexao.connect()
+
 export default conexao
